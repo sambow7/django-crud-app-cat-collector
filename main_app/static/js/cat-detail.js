@@ -1,4 +1,4 @@
-<script defer src="{% static 'js/cat-detail.js' %}"></script>
+
 const dateInput = document.getElementById('id_date'); // Select the date input by ID
 
 // Create a date picker instance

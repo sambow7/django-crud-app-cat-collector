@@ -1,16 +1,19 @@
 {% extends 'base.html' %} {% load static %} {% block head %}
-<!-- New MCDatepicker CSS -->
+<!-- MCDatepicker styles and script -->
 <link
   href="https://cdn.jsdelivr.net/npm/mc-datepicker/dist/mc-calendar.min.css"
   rel="stylesheet"
 />
 <link rel="stylesheet" href="{% static 'css/mcdp.css' %}" />
-<!-- MCDatepicker JS -->
+
 <script src="https://cdn.jsdelivr.net/npm/mc-datepicker/dist/mc-calendar.min.js"></script>
-<!-- Existing CSS -->
+
+<!-- Your JS script -->
+<script defer src="{% static 'js/cat-detail.js' %}"></script>
+
+<!-- Existing page-specific CSS -->
 <link rel="stylesheet" href="{% static 'css/cats/cat-detail.css' %}" />
-{% endblock %} 
-{% block content %}
+{% endblock %} {% block content %}
 <section class="cat-container">
   <div class="cat-img">
     <img src="{% static 'images/sk8r-boi-cat.svg' %}" alt="A skater boy cat" />
