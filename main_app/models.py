@@ -6,7 +6,15 @@ from django.contrib.auth.models import User
 # A tuple of 2-tuples added above our models
 MEALS = (("B", "Breakfast"), ("L", "Lunch"), ("D", "Dinner"))
 
-
+CAT_IMAGES = [
+    ("cat-in-box.svg", "Cat in Box"),
+    ("cool-cat.svg", "Cool Cat"),
+    ("happy-cat.svg", "Happy Cat"),
+    ("nerd-cat.svg", "Nerd Cat"),
+    ("sk8r-boi-cat.svg", "Skater Cat"),
+    ("teacup-cat.svg", "Teacup Cat"),
+    # Add any others you have in static/images
+]
 class Toy(models.Model):
     name = models.CharField(max_length=50)
     color = models.CharField(max_length=20)
@@ -25,6 +33,9 @@ class Cat(models.Model):
     age = models.IntegerField()
     toys = models.ManyToManyField(Toy)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+    image = models.CharField(
+        max_length=100, choices=CAT_IMAGES, default="cat-in-box.svg")
+        
 
     def fed_for_today(self):
         return self.feeding_set.filter(date=date.today()).count() >= len(MEALS)

@@ -16,7 +16,7 @@
 {% endblock %} {% block content %}
 <section class="cat-container">
   <div class="cat-img">
-    <img src="{% static 'images/sk8r-boi-cat.svg' %}" alt="A skater boy cat" />
+    <img src="{% static 'images/' %}{{ cat.image }}" alt="Image of {{ cat.name }}">
   </div>
   <div class="cat-details">
     <h1>{{ cat.name }}</h1>

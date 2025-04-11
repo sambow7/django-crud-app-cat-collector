@@ -69,7 +69,7 @@ def remove_toy(request, cat_id, toy_id):
 
 class CatCreate(LoginRequiredMixin, CreateView):
     model = Cat
-    fields = ["name", "breed", "description", "age"]
+    fields = ["name", "breed", "description", "age", "image"]
 
     # This inherited method is called when a
     # valid cat form is being submitted
@@ -83,7 +83,7 @@ class CatCreate(LoginRequiredMixin, CreateView):
 class CatUpdate(UpdateView):
     model = Cat
     # Let's disallow the renaming of a cat by excluding the name field!
-    fields = ["breed", "description", "age"]
+    fields = ["name", "breed", "description", "age", "image"]
 
 
 class CatDelete(DeleteView):
